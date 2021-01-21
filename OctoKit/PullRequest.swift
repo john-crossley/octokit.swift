@@ -22,6 +22,7 @@ open class PullRequest: Codable {
     open var body: String?
     
     open var assignee: User?
+    open var requestedReviewers: [User]?
     open var milestone: Milestone?
     
     open var locked: Bool?
@@ -54,6 +55,7 @@ open class PullRequest: Codable {
         case title
         case body
         case assignee
+        case requestedReviewers = "requested_reviewers"
         case milestone
         case locked
         case user

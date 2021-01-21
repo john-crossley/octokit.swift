@@ -29,6 +29,8 @@ class PullRequestTests: XCTestCase {
                 XCTAssertEqual(pullRequests.base?.sha, "6dcb09b5b57875f334f61aebed695e2e4193db5e")
                 XCTAssertEqual(pullRequests.base?.user?.login, "octocat")
                 XCTAssertEqual(pullRequests.base?.repo?.name, "Hello-World")
+                
+                XCTAssertEqual(pullRequests.requestedReviewers?.first?.login, "other_user")
 
                 XCTAssertEqual(pullRequests.head?.label, "new-topic")
                 XCTAssertEqual(pullRequests.head?.ref, "new-topic")
@@ -64,6 +66,8 @@ class PullRequestTests: XCTestCase {
                 XCTAssertEqual(pullRequests.first?.base?.sha, "6dcb09b5b57875f334f61aebed695e2e4193db5e")
                 XCTAssertEqual(pullRequests.first?.base?.user?.login, "octocat")
                 XCTAssertEqual(pullRequests.first?.base?.repo?.name, "Hello-World")
+                
+                XCTAssertEqual(pullRequests.first?.requestedReviewers?.first?.login, "other_user")
 
                 XCTAssertEqual(pullRequests.first?.head?.label, "new-topic")
                 XCTAssertEqual(pullRequests.first?.head?.ref, "new-topic")
